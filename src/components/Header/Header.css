@@ -1,0 +1,29 @@
+/*
+ * components/Header/Header.css
+ * Styles de la barre de navigation.
+ */
+.header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 20;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 26px clamp(20px, 4vw, 56px);
+  transition: background 0.4s, padding 0.4s;
+}
+/* Après défilement : léger fond dégradé pour rester lisible */
+.header.solid { background: linear-gradient(to bottom, rgba(6, 7, 10, 0.85), rgba(6, 7, 10, 0)); padding-top: 18px; }
+
+.logo { font-family: var(--serif); font-size: 24px; font-weight: 600; letter-spacing: 0.06em; text-decoration: none; }
+.logo em { font-weight: 400; color: var(--gold); }
+
+.header-nav { display: flex; gap: 30px; }
+.header-nav a { position: relative; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; text-decoration: none; color: var(--muted); transition: color 0.3s; }
+.header-nav a:hover, .header-nav a.on { color: var(--ink); }
+/* Trait doré sous le lien du chapitre actif */
+.header-nav a.on::after { content: ""; position: absolute; left: 0; right: 0; bottom: -8px; height: 1px; background: var(--gold); }
+
+.header-cta { font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; text-decoration: none; border: 1px solid var(--line); padding: 12px 20px; border-radius: 999px; transition: all 0.3s; }
+.header-cta:hover { border-color: var(--gold); color: var(--gold); }
+
+/* Mobile : on ne garde que le logo */
+@media (max-width: 980px) {
+  .header-nav, .header-cta { display: none; }
+}

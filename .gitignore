@@ -1,0 +1,7 @@
+# Dépendances installées par npm
+node_modules/
+# Dossier généré par "npm run build"
+dist/
+# Fichiers système
+.DS_Store
+*.log

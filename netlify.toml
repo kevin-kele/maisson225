@@ -1,0 +1,22 @@
+# netlify.toml
+# -----------------------------------------------------------------------------
+# Configuration lue automatiquement par Netlify quand le site est déployé
+# depuis GitHub / GitLab. Elle indique comment compiler le projet et
+# quel dossier mettre en ligne.
+
+[build]
+  # Commande lancée par Netlify pour compiler le site
+  command = "npm run build"
+  # Dossier produit par Vite : c'est LUI qui doit être publié
+  publish = "dist"
+
+[build.environment]
+  # Version de Node.js utilisée pour la compilation
+  NODE_VERSION = "20"
+
+# Toute adresse inconnue renvoie vers index.html (évite les 404
+# si quelqu'un arrive directement sur une ancre ou un lien partagé)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

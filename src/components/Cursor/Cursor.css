@@ -1,0 +1,16 @@
+/*
+ * components/Cursor/Cursor.css
+ * Cercle doré qui remplace visuellement le curseur.
+ */
+.cursor {
+  position: fixed; left: 0; top: 0; z-index: 60; pointer-events: none;
+  width: 34px; height: 34px; border-radius: 50%;
+  border: 1px solid rgba(217, 178, 111, 0.6);
+  mix-blend-mode: difference;
+  transition: width 0.3s, height 0.3s, background 0.3s;
+}
+/* Au survol d'un élément cliquable */
+.cursor.big { width: 70px; height: 70px; background: rgba(217, 178, 111, 0.15); }
+
+/* Inutile sur écran tactile */
+@media (max-width: 980px), (hover: none) { .cursor { display: none; } }

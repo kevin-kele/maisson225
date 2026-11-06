@@ -1,0 +1,29 @@
+/*
+ * styles/variables.css
+ * -----------------------------------------------------------------------------
+ * Variables de design (couleurs, polices). Changer une valeur ici
+ * la change sur tout le site.
+ */
+:root {
+  /* Couleurs de fond et de texte */
+  --bg: #06070a;
+  --ink: #f3ece0;
+  --muted: #a59d8f;
+  --text-soft: #cfc6b8;
+  --line: rgba(243, 236, 224, 0.12);
+
+  /* Or (couleur de la marque) */
+  --gold: #d9b26f;
+  --gold-2: #f2d39a;
+
+  /* Couleurs du drapeau ivoirien */
+  --orange: #f77f00;
+  --green: #009e60;
+
+  /* Polices */
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --sans: "Manrope", system-ui, sans-serif;
+
+  /* Point de bascule mobile (rappel : à garder en phase avec les @media) */
+  --mobile: 980px;
+}

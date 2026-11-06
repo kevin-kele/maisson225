@@ -1,0 +1,12 @@
+/*
+ * components/Scene3D/Scene3D.css
+ * Le canvas 3D occupe tout l'écran, fixé derrière le contenu.
+ */
+.scene3d {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: block;
+}

@@ -1,0 +1,55 @@
+/*
+ * components/Chapter/Chapter.css
+ * Mise en page des chapitres : panneau de texte à gauche ou à droite,
+ * la forme 3D occupant l'autre moitié de l'écran.
+ */
+.chap {
+  position: relative;
+  min-height: 120vh;
+  display: flex; align-items: center;
+  padding: 140px clamp(20px, 7vw, 120px);
+}
+.chap.right { justify-content: flex-end; }
+.chap.hero { min-height: 100vh; }
+
+.panel { position: relative; max-width: 560px; }
+
+/* Liste des services */
+.items { list-style: none; border-top: 1px solid var(--line); }
+.items li {
+  display: grid; grid-template-columns: 34px 1fr; gap: 6px;
+  padding: 15px 0; border-bottom: 1px solid var(--line);
+  font-size: 14.5px; line-height: 1.55; color: #e4dccf;
+}
+.items li b { font-weight: 500; color: var(--ink); }
+.items li span { font-family: var(--serif); font-style: italic; color: var(--gold); font-size: 15px; }
+
+/* Pastilles des lieux, légèrement floutées derrière */
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
+.tags span {
+  font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase;
+  padding: 8px 13px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted);
+  background: rgba(6, 7, 10, 0.35); backdrop-filter: blur(6px);
+}
+
+/* "Défiler" avec une goutte dorée qui coule */
+.scroll-hint {
+  position: absolute; left: 50%; bottom: 34px; transform: translateX(-50%);
+  font-size: 10px; letter-spacing: 0.4em; color: var(--muted); text-transform: uppercase;
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+}
+.scroll-hint i { width: 1px; height: 46px; background: linear-gradient(var(--gold), transparent); animation: drip 2.2s ease-in-out infinite; }
+@keyframes drip {
+  0% { transform: scaleY(0); transform-origin: top; }
+  45% { transform: scaleY(1); transform-origin: top; }
+  55% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* Mobile : texte en bas de l'écran sur un fond dégradé, 3D au-dessus */
+@media (max-width: 980px) {
+  .chap, .chap.right { justify-content: flex-start; align-items: flex-end; padding: 120px 22px; min-height: 110vh; }
+  .chap.hero { padding-bottom: 110px; }
+  .panel { background: linear-gradient(to top, rgba(6, 7, 10, 0.92), rgba(6, 7, 10, 0.6) 75%, transparent); padding: 30px 4px 10px; border-radius: 18px; }
+  .chap.hero .panel { background: none; }
+}

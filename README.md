@@ -114,4 +114,20 @@ nouveau numéro `scene`, puis la forme correspondante dans `three/scenes.js`
 **Créer une nouvelle forme 3D :** copiez un fichier de `three/shapes/`,
 modifiez les appels à `push(x, y, z, couleur)`, puis exportez-la dans
 `three/shapes/index.js`.
-# maisson225
+
+## 🌐 Mise en ligne sur Netlify
+
+**Option A — Glisser-déposer (le plus simple)**
+1. `npm run build`
+2. Sur https://app.netlify.com/drop, glissez **le dossier `dist`** (pas le dossier du projet).
+   Le fichier `index.html` doit être directement à l'intérieur de ce que vous déposez.
+
+**Option B — Depuis GitHub**
+Le fichier `netlify.toml` règle tout automatiquement :
+commande `npm run build`, dossier publié `dist`.
+Si le projet est dans un sous-dossier du dépôt, indiquez ce sous-dossier
+dans Netlify → *Site configuration → Build & deploy → Base directory*.
+
+En cas de « Page not found » : c'est que Netlify ne trouve pas `index.html`
+à la racine du dossier publié (mauvais dossier glissé, ou *Publish directory*
+différent de `dist`).

@@ -1,0 +1,22 @@
+/*
+ * components/ChapterRail/ChapterRail.css
+ * Styles du sommaire latéral.
+ */
+.rail {
+  position: fixed; right: clamp(14px, 2.4vw, 36px); top: 50%; transform: translateY(-50%); z-index: 20;
+  display: flex; flex-direction: column; gap: 14px;
+}
+.rail button {
+  background: none; border: 0; cursor: pointer; color: var(--muted);
+  font: 500 10px var(--sans); letter-spacing: 0.2em;
+  display: flex; align-items: center; justify-content: flex-end; gap: 10px;
+  opacity: 0.55; transition: opacity 0.3s, color 0.3s;
+}
+/* Le petit trait à droite du libellé */
+.rail button i { display: block; width: 14px; height: 1px; background: currentColor; transition: width 0.4s; }
+/* Section active */
+.rail button.on { opacity: 1; color: var(--gold); }
+.rail button.on i { width: 34px; }
+
+/* Masqué sur mobile (pas la place) */
+@media (max-width: 980px) { .rail { display: none; } }

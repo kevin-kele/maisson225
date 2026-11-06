@@ -1,0 +1,17 @@
+/*
+ * components/Marquee/Marquee.css
+ * Bandeau défilant entre deux traits fins.
+ */
+.marquee {
+  position: relative; z-index: 5; overflow: hidden; padding: 26px 0;
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  background: rgba(6, 7, 10, 0.55); backdrop-filter: blur(6px);
+}
+.marquee-track { display: flex; width: max-content; white-space: nowrap; animation: marquee 46s linear infinite; }
+.marquee-item { display: inline-flex; align-items: center; gap: 56px; padding-right: 56px; }
+.marquee-item span { font-family: var(--serif); font-size: clamp(26px, 3vw, 40px); font-style: italic; color: var(--text-soft); }
+.marquee-item b { color: var(--gold); font-weight: 400; }
+
+/* Déplacement de la moitié de la largeur (= une liste complète) */
+@keyframes marquee { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }

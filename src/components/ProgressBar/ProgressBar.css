@@ -1,0 +1,8 @@
+/*
+ * components/ProgressBar/ProgressBar.css
+ * Barre de progression aux couleurs du drapeau.
+ */
+.progress {
+  position: fixed; left: 0; top: 0; z-index: 30; height: 2px; width: 0;
+  background: linear-gradient(90deg, var(--orange), #fff, var(--green));
+}

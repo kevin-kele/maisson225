@@ -1,0 +1,21 @@
+{
+  "name": "maison225",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Site immersif 3D de conciergerie privée en Côte d'Ivoire (React + Three.js)",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "three": "^0.160.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.4.0"
+  }
+}
